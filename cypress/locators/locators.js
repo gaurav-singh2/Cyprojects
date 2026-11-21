@@ -14,6 +14,7 @@ const locators = {
 
   searchResults: {
     productLinks: 'a[href*="/p/"]',
+    productImage: 'img[alt]', // inside a product link; alt holds the product name
     sortOption: 'div', // used with the sort label, e.g. "Price -- Low to High"
     noResultsMessage: { selector: 'div', text: /sorry, no results found/i },
   },
