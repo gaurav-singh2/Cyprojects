@@ -49,7 +49,10 @@ describe('Search', () => {
       report.forEach((line) => cy.log(line)); // Cypress runner
       cy.task('log', `\n[TC11]\n${report.join('\n')}\n`); // terminal
 
-      expect(matching.length, 'Samsung Galaxy S25 Ultra products on first page').to.be.greaterThan(0);
+      // Check after printing, so the count shows up even when the test fails.
+      cy.then(() => {
+        expect(matching.length, 'Samsung Galaxy S25 Ultra products on first page').to.be.greaterThan(0);
+      });
     });
   });
 });
