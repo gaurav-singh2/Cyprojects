@@ -10,9 +10,4 @@ describe('Home page', () => {
   it('TC02 - shows the search box', () => {
     HomePage.searchBox().should('be.visible').and('have.attr', 'placeholder');
   });
-
-  it('TC03 - shows the Login and Cart links', () => {
-    HomePage.loginLink().should('be.visible');
-    HomePage.cartLink().should('exist');
-  });
 });

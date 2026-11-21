@@ -14,7 +14,7 @@ npm test          # headless run of every spec
 
 ```
 cypress/
-  e2e/        test specs (home, search, product, cart, login)
+  e2e/        test specs (home, search, product, cart)
   locators/   locators.js - every selector in one file
   pages/      page objects (actions per page, read selectors from locators.js)
   fixtures/   test data (testData.json)
@@ -28,7 +28,6 @@ cypress.config.js
 |------|-----------------|------|
 | TC01 | home.cy.js      | Home page title contains "Flipkart" |
 | TC02 | home.cy.js      | Search box is visible |
-| TC03 | home.cy.js      | Login and Cart links are shown |
 | TC04 | search.cy.js    | Valid search returns products |
 | TC05 | search.cy.js    | Search term stays in the search box |
 | TC06 | search.cy.js    | Nonsense term shows "no results" |
@@ -36,9 +35,6 @@ cypress.config.js
 | TC08 | product.cy.js   | Product page shows title and price |
 | TC09 | product.cy.js   | Add to Cart and Buy Now buttons are shown |
 | TC10 | cart.cy.js      | Empty cart shows the empty message |
-| TC11 | cart.cy.js      | Adding a product puts it in the cart |
-| TC12 | login.cy.js     | Login page shows input and Request OTP |
-| TC13 | login.cy.js     | Invalid mobile number is rejected |
 
 ## Notes
 

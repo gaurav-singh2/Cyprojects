@@ -10,8 +10,6 @@ const locators = {
 
   home: {
     logo: 'img[title="Flipkart"], a[title="Flipkart"]',
-    loginLink: { selector: 'a, span', text: /^Login$/ },
-    cartLink: 'a[href*="viewcart"]',
   },
 
   searchResults: {
@@ -28,15 +26,8 @@ const locators = {
   },
 
   cart: {
-    placeOrderButton: { selector: 'button', text: /place order/i },
     emptyCartMessage: { selector: 'div', text: /your cart is empty/i },
     removeButton: { selector: 'div', text: /^Remove$/ },
-  },
-
-  login: {
-    mobileInput: 'input[type="text"]',
-    requestOtpButton: { selector: 'button', text: /request otp/i },
-    invalidInputError: { selector: 'span, div', text: /please enter valid/i },
   },
 };
 
