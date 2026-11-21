@@ -1,0 +1,15 @@
+{
+  "name": "flipkart-cypress-automation",
+  "version": "1.0.0",
+  "description": "Cypress end-to-end automation suite for flipkart.com",
+  "scripts": {
+    "cy:open": "cypress open",
+    "test": "cypress run",
+    "test:chrome": "cypress run --browser chrome",
+    "test:headed": "cypress run --headed --browser chrome",
+    "test:smoke": "cypress run --spec 'cypress/e2e/search.cy.js,cypress/e2e/home.cy.js'"
+  },
+  "devDependencies": {
+    "cypress": "^13.17.0"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "searchTerms": {
+    "valid": "iphone 15",
+    "category": "laptop",
+    "invalid": "zxqwvbnmplkjh123"
+  },
+  "invalidLogin": {
+    "mobile": "12345"
+  }
+}

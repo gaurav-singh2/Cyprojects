@@ -1,0 +1,46 @@
+# Flipkart Cypress Automation
+
+End-to-end tests for [flipkart.com](https://www.flipkart.com), written with Cypress using the Page Object Model.
+
+## Setup
+
+```bash
+npm install
+npm run cy:open   # interactive runner
+npm test          # headless run of every spec
+```
+
+## Layout
+
+```
+cypress/
+  e2e/        test specs (home, search, product, cart, login)
+  pages/      page objects (selectors and actions per page)
+  fixtures/   test data (testData.json)
+  support/    custom commands (openHome, closeLoginPopup, searchFor)
+cypress.config.js
+```
+
+## Test cases
+
+| ID   | Spec            | Case |
+|------|-----------------|------|
+| TC01 | home.cy.js      | Home page title contains "Flipkart" |
+| TC02 | home.cy.js      | Search box is visible |
+| TC03 | home.cy.js      | Login and Cart links are shown |
+| TC04 | search.cy.js    | Valid search returns products |
+| TC05 | search.cy.js    | Search term stays in the search box |
+| TC06 | search.cy.js    | Nonsense term shows "no results" |
+| TC07 | search.cy.js    | Sort by price low to high |
+| TC08 | product.cy.js   | Product page shows title and price |
+| TC09 | product.cy.js   | Add to Cart and Buy Now buttons are shown |
+| TC10 | cart.cy.js      | Empty cart shows the empty message |
+| TC11 | cart.cy.js      | Adding a product puts it in the cart |
+| TC12 | login.cy.js     | Login page shows input and Request OTP |
+| TC13 | login.cy.js     | Invalid mobile number is rejected |
+
+## Notes
+
+- Flipkart's CSS class names are generated and change often, so the selectors use stable attributes (`name`, `href`, `role`) and visible text instead.
+- Flipkart has bot protection. Headless runs, or many runs from one IP, can get an "Access Denied" page or a captcha. Use `npm run test:headed` if that happens.
+- Product links open in a new tab. `SearchResultsPage.openFirstProduct()` removes `target="_blank"` so Cypress stays in one tab.
