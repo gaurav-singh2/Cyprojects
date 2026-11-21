@@ -4,8 +4,8 @@
     "category": "laptop",
     "invalid": "zxqwvbnmplkjh123"
   },
-  "samsungS25": {
-    "searchTerm": "samsung s25 mobile",
-    "nameMustContain": ["samsung", "s25"]
+  "samsungS25Ultra": {
+    "searchTerm": "samsung galaxy s25 ultra",
+    "nameMustContain": "samsung galaxy s25 ultra"
   }
 }

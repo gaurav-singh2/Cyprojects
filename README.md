@@ -35,7 +35,7 @@ cypress.config.js
 | TC08 | product.cy.js   | Product page shows title and price |
 | TC09 | product.cy.js   | Add to Cart and Buy Now buttons are shown |
 | TC10 | cart.cy.js      | Empty cart shows the empty message |
-| TC11 | search.cy.js    | Search "samsung s25 mobile" and count first-page products whose name contains Samsung and S25 |
+| TC11 | search.cy.js    | Search "samsung galaxy s25 ultra" and count first-page products named Samsung Galaxy S25 Ultra |
 
 ## Notes
 
