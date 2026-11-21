@@ -40,9 +40,14 @@ describe('Search', () => {
         name.toLowerCase().replace(/\s+/g, ' ').includes(nameMustContain.toLowerCase())
       );
 
-      cy.log(`Products on first page: ${names.length}`);
-      cy.log(`Products named "${nameMustContain}": ${matching.length}`);
-      matching.forEach((name, i) => cy.log(`${i + 1}. ${name}`));
+      const report = [
+        `Products on first page: ${names.length}`,
+        `Products named "${nameMustContain}": ${matching.length}`,
+        ...matching.map((name, i) => `  ${i + 1}. ${name}`),
+      ];
+
+      report.forEach((line) => cy.log(line)); // Cypress runner
+      cy.task('log', `\n[TC11]\n${report.join('\n')}\n`); // terminal
 
       expect(matching.length, 'Samsung Galaxy S25 Ultra products on first page').to.be.greaterThan(0);
     });

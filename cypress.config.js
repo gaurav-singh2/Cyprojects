@@ -13,5 +13,14 @@ module.exports = defineConfig({
     video: false,
     screenshotOnRunFailure: true,
     retries: { runMode: 1, openMode: 0 },
+    setupNodeEvents(on) {
+      // Lets tests print to the terminal with cy.task('log', message).
+      on('task', {
+        log(message) {
+          console.log(message);
+          return null;
+        },
+      });
+    },
   },
 });
