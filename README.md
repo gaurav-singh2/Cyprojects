@@ -37,6 +37,18 @@ cypress.config.js
 | TC09 | cart.cy.js      | Empty cart shows the empty message |
 | TC10 | search.cy.js    | Search "samsung galaxy s25 ultra" and count first-page products named Samsung Galaxy S25 Ultra |
 
+## Test data (`cypress/fixtures/testData.json`)
+
+JSON files can't hold comments, so here is what each value is for:
+
+| Key | Used by | Meaning |
+|-----|---------|---------|
+| `searchTerms.valid` | TC03, TC07, TC08 | A product that always has results ("iphone 15") |
+| `searchTerms.category` | TC04, TC06 | A broad category with many products at different prices ("laptop") |
+| `searchTerms.invalid` | TC05 | Random letters that match no product |
+| `samsungS25Ultra.searchTerm` | TC10 | What to type in the search box |
+| `samsungS25Ultra.nameMustContain` | TC10 | A product is counted only if its name contains this text |
+
 ## Notes
 
 - Flipkart's CSS class names are generated and change often, so the selectors use stable attributes (`name`, `href`, `role`) and visible text instead.
