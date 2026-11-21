@@ -28,14 +28,14 @@ cypress.config.js
 |------|-----------------|------|
 | TC01 | home.cy.js      | Home page title contains "Flipkart" |
 | TC02 | home.cy.js      | Search box is visible |
-| TC04 | search.cy.js    | Valid search returns products |
-| TC05 | search.cy.js    | Search term stays in the search box |
-| TC06 | search.cy.js    | Nonsense term shows "no results" |
-| TC07 | search.cy.js    | Sort by price low to high |
-| TC08 | product.cy.js   | Product page shows title and price |
-| TC09 | product.cy.js   | Add to Cart and Buy Now buttons are shown |
-| TC10 | cart.cy.js      | Empty cart shows the empty message |
-| TC11 | search.cy.js    | Search "samsung galaxy s25 ultra" and count first-page products named Samsung Galaxy S25 Ultra |
+| TC03 | search.cy.js    | Valid search returns products |
+| TC04 | search.cy.js    | Search term stays in the search box |
+| TC05 | search.cy.js    | Nonsense term shows "no results" |
+| TC06 | search.cy.js    | Sort by price low to high |
+| TC07 | product.cy.js   | Product page shows title and price |
+| TC08 | product.cy.js   | Add to Cart and Buy Now buttons are shown |
+| TC09 | cart.cy.js      | Empty cart shows the empty message |
+| TC10 | search.cy.js    | Search "samsung galaxy s25 ultra" and count first-page products named Samsung Galaxy S25 Ultra |
 
 ## Notes
 

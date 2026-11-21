@@ -11,12 +11,12 @@ describe('Product details', () => {
     });
   });
 
-  it('TC08 - shows the product title and price', () => {
+  it('TC07 - shows the product title and price', () => {
     ProductPage.title().should('be.visible').and('not.be.empty');
     ProductPage.price().should('be.visible');
   });
 
-  it('TC09 - shows Add to Cart and Buy Now buttons', () => {
+  it('TC08 - shows Add to Cart and Buy Now buttons', () => {
     ProductPage.addToCartButton().should('be.visible');
     ProductPage.buyNowButton().should('be.visible');
   });

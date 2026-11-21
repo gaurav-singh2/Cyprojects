@@ -7,29 +7,29 @@ describe('Search', () => {
     HomePage.visit();
   });
 
-  it('TC04 - returns results for a valid product', function () {
+  it('TC03 - returns results for a valid product', function () {
     HomePage.search(this.data.searchTerms.valid);
     cy.url().should('include', '/search?q=');
     SearchResultsPage.productLinks().should('have.length.greaterThan', 0);
   });
 
-  it('TC05 - search term is kept in the search box', function () {
+  it('TC04 - search term is kept in the search box', function () {
     HomePage.search(this.data.searchTerms.category);
     HomePage.searchBox().should('have.value', this.data.searchTerms.category);
   });
 
-  it('TC06 - shows a no-results message for a nonsense term', function () {
+  it('TC05 - shows a no-results message for a nonsense term', function () {
     HomePage.search(this.data.searchTerms.invalid);
     SearchResultsPage.noResultsMessage().should('be.visible');
   });
 
-  it('TC07 - sorts results by price low to high', function () {
+  it('TC06 - sorts results by price low to high', function () {
     HomePage.search(this.data.searchTerms.category);
     SearchResultsPage.sortOption('Price -- Low to High').click();
     cy.url().should('include', 'sort=price_asc');
   });
 
-  it('TC11 - counts Samsung Galaxy S25 Ultra products on the first results page', function () {
+  it('TC10 - counts Samsung Galaxy S25 Ultra products on the first results page', function () {
     const { searchTerm, nameMustContain } = this.data.samsungS25Ultra;
 
     HomePage.search(searchTerm);
@@ -47,7 +47,7 @@ describe('Search', () => {
       ];
 
       report.forEach((line) => cy.log(line)); // Cypress runner
-      cy.task('log', `\n[TC11]\n${report.join('\n')}\n`); // terminal
+      cy.task('log', `\n[TC10]\n${report.join('\n')}\n`); // terminal
 
       // Check after printing, so the count shows up even when the test fails.
       cy.then(() => {
