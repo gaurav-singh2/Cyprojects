@@ -15,7 +15,8 @@ npm test          # headless run of every spec
 ```
 cypress/
   e2e/        test specs (home, search, product, cart, login)
-  pages/      page objects (selectors and actions per page)
+  locators/   locators.js - every selector in one file
+  pages/      page objects (actions per page, read selectors from locators.js)
   fixtures/   test data (testData.json)
   support/    custom commands (openHome, closeLoginPopup, searchFor)
 cypress.config.js
@@ -42,5 +43,6 @@ cypress.config.js
 ## Notes
 
 - Flipkart's CSS class names are generated and change often, so the selectors use stable attributes (`name`, `href`, `role`) and visible text instead.
+- All selectors live in `cypress/locators/locators.js`. If Flipkart changes a page, update the selector there; page objects and specs stay the same.
 - Flipkart has bot protection. Headless runs, or many runs from one IP, can get an "Access Denied" page or a captcha. Use `npm run test:headed` if that happens.
 - Product links open in a new tab. `SearchResultsPage.openFirstProduct()` removes `target="_blank"` so Cypress stays in one tab.

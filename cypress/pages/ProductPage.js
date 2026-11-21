@@ -1,8 +1,12 @@
+import locators from '../locators/locators';
+
+const { product } = locators;
+
 class ProductPage {
-  title() { return cy.get('h1').first(); }
-  price() { return cy.contains('div', /^₹[\d,]+$/).first(); }
-  addToCartButton() { return cy.contains('button', /add to cart/i); }
-  buyNowButton() { return cy.contains('button', /buy now/i); }
+  title() { return cy.get(product.title).first(); }
+  price() { return cy.findByText(product.price).first(); }
+  addToCartButton() { return cy.findByText(product.addToCartButton); }
+  buyNowButton() { return cy.findByText(product.buyNowButton); }
 
   addToCart() { this.addToCartButton().click(); }
 }

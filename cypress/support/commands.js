@@ -1,7 +1,11 @@
+import locators from '../locators/locators';
+
+const { common } = locators;
+
 // Close the login popup Flipkart shows on first visit (if it appears).
 Cypress.Commands.add('closeLoginPopup', () => {
   cy.get('body').then(($body) => {
-    const closeBtn = $body.find('span[role="button"]:contains("✕")');
+    const closeBtn = $body.find(common.loginPopupClose);
     if (closeBtn.length) cy.wrap(closeBtn.first()).click({ force: true });
   });
 });
@@ -14,5 +18,10 @@ Cypress.Commands.add('openHome', () => {
 
 // Search for a product from the header search box.
 Cypress.Commands.add('searchFor', (term) => {
-  cy.get('input[name="q"]').first().clear().type(`${term}{enter}`);
+  cy.get(common.searchBox).first().clear().type(`${term}{enter}`);
+});
+
+// Find an element by a { selector, text } locator.
+Cypress.Commands.add('findByText', (locator) => {
+  return cy.contains(locator.selector, locator.text);
 });
